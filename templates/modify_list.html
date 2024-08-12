@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Modify List</title>
+    <style>
+        .box{
+           margin: 10rem 20rem 20rem 30rem;
+           border: 2px solid black;
+           height: fit-content;
+           width: fit-content;
+           padding: 4rem;
+           border-radius: 2rem;
+           
+        }
+        button a{
+            text-decoration: none;
+            color: black;
+            gap: 5rem;
+        }
+        .box .M , .D{
+            margin-left: 1.5rem;
+        }
+        .box .A{
+            margin-bottom: 2rem;
+        }
+        .box .back{
+            text-decoration: underline;
+            color: black;
+            margin-left: 6rem;
+            
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <h1>Students List</h1>
+    
+       
+            
+
+
+        {% for mark in marks %}
+        <ul><li>
+            <a href="{% url 'student_marks_modify' mark.pk %}">{{mark.Name}}</a>
+        </li></ul>
+            
+           
+        {% endfor %}
+    
+    
+    <a href="{% url 'student_marks_list' %}" class="back">Back</a>
+    </div>
+  
+    
+</body>
+</html>

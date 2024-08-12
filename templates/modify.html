@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Subject</title>
+    <style>
+        body{
+            margin: 15rem 30rem 20rem 37rem;
+        }
+        .btn{
+            margin-left: 6rem;
+            margin-top: 2rem;
+            background-color: whitesmoke;
+            /* border-radius: 1rem; */
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition-duration: 1s;
+        }
+        .btn:hover{
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Subject</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Update</button>
+    </form>
+</body>
+</html>

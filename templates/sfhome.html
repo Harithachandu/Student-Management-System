@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            width: fit-content;
+            padding: 5rem;
+            margin-top: 10rem;
+            margin-left: 30rem;
+            border-radius: 2rem;
+        }
+        div button a{
+            text-decoration: none;
+            color: black;
+        
+        }
+        .content{
+            display: flex;
+        }
+        .box .content button a{
+            margin-bottom: 2rem;
+        }
+        .heading {
+            margin-left: 8rem;
+        }
+        span{
+            margin-left: 3rem;
+        }
+        .subject{
+            margin-left: 2rem;
+        }
+        .box h1{
+            /* margin-left: 6rem; */
+            text-decoration: underline;
+
+        }
+        .student{
+            margin-left: 3rem;
+        }
+        .b{
+            margin-bottom: 3rem;
+        }
+        .back{
+            margin-left: 4rem;
+        }
+        
+        
+       
+       </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Staff Home</h1><br>
+         
+         <button><a href="{% url 'Subject_Page' %}">Subject</a></button>
+         <button class="student"><a href="{% url 'student_marks_list' %}">Marks</a></button><br><br><br>
+         <a href="/" class="back">Back</a>
+         
+  
+      
+    </div>
+    
+</body>
+</html>

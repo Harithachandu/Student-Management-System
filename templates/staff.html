@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-bottom: 4rem;
+        }
+        form{
+            margin: 8rem 27rem 27rem 27rem;
+        }
+        .btn {
+            margin-top: 2rem;
+            margin-left: 7rem;
+            /* border-radius: 2rem; */
+            background-color: whitesmoke;
+            transition-duration: 1s;
+            padding: 0.5rem;
+            color: black;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .name span{
+            margin-left: 2rem;
+         }
+         .password span{
+            margin-left: 2.7rem;
+         }
+        /* .btn:hover{
+            background-color: black;
+            font-size: medium;
+            color: whitesmoke;
+        } */
+        
+        
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h1>Staff Login Page</h1>
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+          <div class="form-group name">
+                {{form.Staff_Name.label_tag}} <span>{{form.Staff_Name}}</span>
+          </div><br>
+          <div class="form-group password">
+                {{form.Password.label_tag}} <span>{{form.Password}}</span>
+
+          </div>
+        <button type="submit" class="btn">Login</button>
+        <button class="btn"><a href="/">Home</a></button>
+        
+    </form>
+    
+</body>
+</html>

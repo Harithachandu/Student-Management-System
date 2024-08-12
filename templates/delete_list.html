@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject List</title>
+    <style>
+        body{
+            margin: 12rem 30rem 20rem 30rem;
+        }
+        .btn{
+            /* margin-left: 2rem; */
+            margin-top: 2rem;
+            background-color: whitesmoke;
+            /* border-radius: 1rem; */
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition-duration: 1s;
+        }
+        /* .btn:hover{
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+        } */
+        table a{
+            text-decoration: none;
+            margin-left: 2rem;
+            color: black;
+        }
+        table a span{
+            color: red;
+            /* margin-right: 25rem; */
+        }
+        /* table{
+            border: 2px solid black;
+            border-collapse: collapse;
+            
+        } */
+         .box{
+            /* border: 2px solid black; */
+            justify-content: center;
+            align-items: center;
+         }
+         table{
+            border-collapse: collapse;
+            text-align: center;
+            
+         }
+         a{
+            margin-right: 2rem;
+         }
+        
+    </style>
+</head>
+<body>
+    <h1>Subject List</h1>
+   
+        
+            
+            <div class="box">
+            <table border="2px solid black">
+                <tr>
+                    <th>Subject Name</th>
+                    <th colspan="2">Action</th>
+                </tr>
+                {% for subject in subjects %}
+                    <tr>
+                        <td><a href="#">{{ subject.Subject_Name }}</a></td>
+                        <td><a href="{% url 'modify_subject' subject.pk %}"><span>Modify</span></a></td>
+                        <td><a href="{% url 'delete_subject' subject.pk %}"><span>Delete</span></a></td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+        
+    <a href="{% url 'Staff_Home' %}"><button class="btn">Home</button></a>
+    <a href="{% url 'add_subject' %}"><button class="btn">Add</button></a>
+    <a href="{% url 'Subject_Page' %}"><button class="btn">Back</button></a>
+    
+</body>
+</html>

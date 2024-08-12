@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Delete List</title>
+    <style>
+        .box{
+           margin: 10rem 20rem 20rem 30rem;
+           border: 2px solid black;
+           height: fit-content;
+           width: fit-content;
+           padding: 4rem;
+           border-radius: 2rem;
+           
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            gap: 5rem;
+        }
+        .box .B, .C{
+            margin-left: 1.5rem;
+        }
+        .box .A{
+            margin-bottom: 2rem;
+        }
+        .box .back{
+            text-decoration: underline;
+            color: black;
+            margin-left: 6rem;
+            
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <h1>Choose a Option</h1>
+    
+       
+            <button class="A"><a href="{% url 'student_marks_add' %}">Add</a></button>
+            <button class="B"><a href="{% url 'Student_List'%}">Modify</a></button>
+            <button class="C"><a href="{% url 'Student_delete_List'%}">Delete</a></button>
+
+        <!-- {% for mark in marks %}
+            <button class="M"><a href="{% url 'student_marks_modify' mark.pk %}">Modify</a></button>
+            <button class="D"><a href="{% url 'student_marks_delete' mark.pk %}">Delete</a></button> <br><br><br>
+           
+        {% endfor %} -->
+    
+    
+    <a href="{% url 'Staff_Home' %}" class="back">Back</a>
+    </div>
+  
+    
+</body>
+</html>

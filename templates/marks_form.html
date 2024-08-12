@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Form</title>
+    <style>
+        body{
+            margin: 5rem 20rem 20rem 30rem;
+        }
+        /* button{
+            margin-left: 7rem;
+        }
+        a{
+            margin-left: 7rem;
+        } */
+        form .Name span{
+            margin-left: 5.7rem;
+        }
+          form .Reg_No span{
+            margin-left: 5rem;
+        }
+        form .Sem span{
+            margin-left: 6.4rem;
+        }
+        form .Sql span{
+            margin-left: 6.9rem;
+        }
+        form .Frontend span{
+            margin-left: 4.6rem;
+        }
+        form .python span{
+            margin-left: 5.4rem;
+        }
+        form .Django span{
+            margin-left: 5.4rem;
+        }
+        form .Maximum_Marks span{
+            margin-left: 1.5rem;
+        }
+        form .Obtained_Marks span{
+            margin-left: 1.9rem;
+        }
+        form .Total_Marks span{
+            margin-left: 3.6rem;
+        }
+        form .Percentage span{
+            margin-left: 4.1rem;
+        }
+        button a{
+            text-decoration: none;
+            color: black;
+        }
+        button{
+            margin-left: 4rem;
+        }
+
+        
+       
+    </style>
+</head>
+<body>
+    <h1>Student Marks Form</h1><br><br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group Name">
+            {{form.Name.label_tag}} <span>{{form.Name}}</span>
+        </div><br>
+        <div class="form-group Reg_No">
+            {{form.Reg_No.label_tag}} <span>{{form.Reg_No}}</span>
+       </div><br>
+       <div class="form-group Sem">
+            {{form.Sem.label_tag}} <span>{{form.Sem}}</span>
+       </div><br>
+       <div class="form-group Sql">
+            {{form.Sql.label_tag}} <span>{{form.Sql}}</span>
+       </div><br>
+       <div class="form-group Frontend">
+            {{form.Frontend.label_tag}} <span>{{form.Frontend}}</span>
+       </div><br>
+       <div class="form-group python">
+            {{form.python.label_tag}} <span>{{form.python}}</span>
+       </div><br>
+       <div class="form-group Django">
+            {{form.Django.label_tag}} <span>{{form.Django}}</span>
+       </div><br>
+       <div class="form-group Maximum_Marks">
+            {{form.Maximum_Marks.label_tag}} <span>{{form.Maximum_Marks}}</span>
+       </div><br>
+       <div class="form-group Obtained_Marks">
+        {{form.Obtained_Marks.label_tag}} <span>{{form.Obtained_Marks}}</span>
+   </div><br>
+       <div class="form-group Total_Marks">
+            {{form.Total_Marks.label_tag}} <span>{{form.Total_Marks}}</span>
+       </div><br>
+       <div class="form-group Percentage">
+            {{form.Percentage.label_tag}} <span>{{form.Percentage}}</span>
+       </div>
+
+        <button type="submit">Save</button>
+        <button><a href="{% url 'student_marks_list' %}">Cancel</a></button>
+    </form>
+    
+</body>
+</html>

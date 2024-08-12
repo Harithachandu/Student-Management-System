@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject List</title>
+    <style>
+        body{
+            margin: 15rem 30rem 20rem 30rem;
+            font-size: larger;
+        }
+        .btn{
+            margin-left: 2rem;
+            margin-top: 2rem;
+            background-color: whitesmoke;
+            /* border-radius: 1rem; */
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition-duration: 1s;
+        }
+        /* .btn:hover{
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+        } */
+        table a,th{
+            text-decoration: none;
+            margin-left: 1rem;
+            color: black;
+            
+        }
+        table a span{
+            color: red;
+            /* margin-right: 25rem; */
+        }
+       
+         table{
+            border-collapse: collapse;
+            text-align: center;
+            
+         }
+         a{
+            margin-right: 2rem;
+         }
+       
+    </style>
+</head>
+<body>
+    <h1>Subject List</h1>
+   
+            
+            <div class="box">
+            <table border="2px solid black">
+                <tr>
+                    <th>Subject</th>
+                    <th>Action</th>
+                </tr>
+                {% for subject in subjects %}
+                
+                    <tr>
+                        <td><a href="#">{{ subject.Subject_Name }}</a></td>
+                        <td><a href="{% url 'modify_subject' subject.pk %}"><span>Modify</span></a></td>
+                    </tr>
+
+                {% endfor %}
+                
+                
+            </table>
+        </div>
+      
+        <!-- <button class="btn"><a href="Subject_Page">Back</a></button> -->
+    <a href="{% url 'Subject_Page' %}"><button class="btn">Back</button></a>
+    <a href="{% url 'Staff_Home' %}"><button class="btn">Home</button></a>
+    
+</body>
+</html>

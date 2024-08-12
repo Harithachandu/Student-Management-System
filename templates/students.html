@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% for d in data %}
+    <title>{{ d.Name }}</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>  -->
+    {% endfor %}
+    <style>
+        body{
+            margin: 2rem 20rem 20rem 20rem;
+        }
+        h1{
+            margin-left: 15rem;
+        }
+        .table{
+            margin-left: 13rem;
+        }
+        h1{
+            text-decoration: underline;
+        }
+        table{
+            border-collapse: collapse;
+            
+        }
+        a{
+            margin-left: 40rem;
+            text-decoration: none;
+            font-size: larger;
+        }
+        .table table tr td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>                                                                                                                                                                                                         
+    {% csrf_token %}
+    {% for d in data %}
+    <h1>{{ d.Name }} Results</h1><br>
+
+    
+    <div class="head">
+        <h4>Name : {{ d.Name }}</h4>
+        <h4>Register No  : {{ d.Reg_No }}</h4>
+        <h4>Sem : {{ d.Sem }}</h4><br>
+
+
+        <!-- <table>
+            <tr>
+  
+            <th>{{d.Name}}</th>
+            <th>{{d.Reg_No}}</th>
+            <th>{{d.Sem}}</th>
+            </tr>
+        </table> -->
+    </div>
+    <div class="table">
+        <table border="2px solid black">
+            
+            <tr>
+                <th>Subject</th>
+                <th>Maximum Marks</th>
+                <th>Obtained Marks</th>
+            </tr>
+            
+            <tr>
+                <td>SQL</td>
+                <td>  {{d.Maximum_Marks}}</td>
+                <td>  {{d.Sql}}</td>
+            </tr>
+            <tr>
+                <td>FrontEnd</td>
+                <td>{{d.Maximum_Marks}}</td>
+                <td>{{d.Frontend}}</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>{{d.Maximum_Marks}}</td>
+                <td>{{d.python}}</td>
+            </tr>
+            <tr>
+                <td>Django</td>
+                <td>{{d.Maximum_Marks}}</td>
+                <td>{{d.Django}}</td>
+            </tr>
+
+        
+
+            
+        </table><br><br>
+        <p><b>Total Marks : </b>{{ d.Total_Marks }}</p>
+        <p><b>Total Obtained Marks :</b> {{ d.Obtained_Marks }}</p>
+        <p><b>Percentage :</b> {{ d.Percentage }}</p>
+        {% endfor %}
+    </div><br><br>
+    <a href="student">Back</a>
+</body>
+</html>

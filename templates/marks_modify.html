@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks List</title>
+    <style>
+        .delete{
+            margin-left: 2rem;
+        }
+        .add{
+            margin-left: 2rem;
+        }
+        body{
+            margin: 10rem 10rem 5rem 30rem;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <h1>Student Marks List</h1>
+    <ul>
+        {% for mark in marks %}
+            <li>{{ mark.Name }} - Reg No: {{ mark.Reg_No }} 
+            </li>
+            <table class="table">
+                <tr>
+                    <th>Subject</th>
+                    <th>Maximum Marks</th>
+                    <th>Obtained Marks</th>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>{{ mark.Maximum_Marks }}</td>
+                    <td>{{ mark.Sql }}</td>
+                </tr>
+                <tr>
+                    <td>FrontEnd</td>
+                    <td>{{ mark.Maximum_Marks }}</td>
+                    <td>{{ mark.Frontend }}</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>{{ mark.Maximum_Marks }}</td>
+                    <td>{{ mark.python }}</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>{{ mark.Maximum_Marks }}</td>
+                    <td>{{ mark.Django }}</td>
+                </tr>
+            </table>
+            <p><b>Total Marks: </b>{{ mark.Total_Marks }}</p>
+            <p><b>Total Gained Marks: </b>{{ mark.Obtained_Marks }}</p>
+            <p><b>Percentage: </b>{{ mark.Percentage }}%</p>
+            <a href="{% url 'student_marks_modify' mark.pk %}">Modify</a>
+        {% endfor %}
+    </ul><br>
+    
+    <a href="student">Back</a>
+    
+</body>
+</html>

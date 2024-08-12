@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box{
+            margin: 15rem 20rem 20rem 40rem;
+            border: 2px solid black;
+            height: fit-content;
+            width: fit-content;
+            padding: 5rem;
+            border-radius: 2rem;
+            text-align: center;
+        } */
+        
+        .box{
+            margin: 10rem 20rem 20rem 30rem;
+            border: 2px solid black;
+            border-radius: 2rem;
+            height: fit-content;
+            width: fit-content;
+            padding: 4rem;
+        }
+        button a{
+            text-decoration: none;
+            color: black;
+            gap: 6rem;
+        }
+        .box .M , .D{
+            margin-left: 1.5rem;
+        }
+        .box .back{
+            color: black;
+            margin-left: 6rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Choose a Option</h1><br><br>
+        <button class="A"><a href="{% url 'add_subject' %}">Add</a></button>
+        <button class="M"><a href="{% url 'subject_list' %}">Modify</a></button> 
+        <button class="D"><a href="{% url 'delete_list' %}">Delete</a></button><br><br><br>
+        <a href="{% url 'Staff_Home' %}" class="back">Back</a>
+        
+    </div>
+    
+</body>
+</html>
